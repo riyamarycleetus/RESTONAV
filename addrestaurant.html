@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Page with Buttons</title>
+    <style>
+        /* Apply background image to the body */
+        body {
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Style the buttons */
+        .button-container {
+            text-align: center;
+            padding: 60px;
+        }
+
+        /* Style the buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #c41c1c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style the container */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            
+            display: none; /* Hide the container by default */
+            color: rgb(52, 49, 49);
+        }
+
+        .container-content {
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        .header {
+            background-color: transparent;
+            color: #fff;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+        .containerar {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .containerarar h2 {
+            margin-top: 0;
+        }
+
+        .form-groupar {
+            margin-bottom: 15px;
+        }
+
+        labelar {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        select {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+
+        buttonar {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="header">CONTACT US</button>
+        <button class="header">ABOUT</button>
+        <button id="form-open" class="header">LOGIN/SIGNUP</button>
+    </header>
+    <!-- Button container -->
+    <div class="button-container">
+        <!-- Button 1 -->
+        <button class="button" id="addRestaurantButton">ADD YOUR RESTAURANT</button>
+
+        <!-- Button 2 -->
+        <button class="button" id="viewRestaurantsButton">VIEW EXISTING RESTAURANTS</button>
+    </div>
+
+    <!-- Container below the buttons -->
+    <div class="container" id="containerAddRestaurant">
+        <h1>Add Restaurant</h1>
+        <div class="container-content">
+            <div class="containerar">
+                <h2>Restaurant Details</h2>
+                <div class="form-groupar">
+                    <labelar for="restaurantName">Restaurant Name:</labelar>
+                    <input type="text" id="restaurantName" name="restaurantname" required>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="restaurantType">Restaurant Type:</labelar>
+                    <select id="restaurantType" name="restauranttype" required>
+                        <option value="pub">Pub</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="streetfood">Street Food</option>
+                        <option value="restaurant">Restaurant</option>
+                    </select>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="phoneNumber">Phone Number:</labelar>
+                    <input type="number" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="location">Location:</labelar>
+                    <input type="text" id="location" name="location" step="any" required>
+                    <div>
+                        <labelar for="latitude">Latitude:</labelar>
+                        <input type="number" id="latitude" name="latitude" step="any" required>
+                    </div>
+                    <div>
+                        <labelar for="longitude">Longitude:</labelar>
+                        <input type="number" id="longitude" name="longitude" step="any" required>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="containerar">
+                <h2>Owner Details</h2>
+                <div class="form-groupar">
+                    <labelar for="ownerName">Owner Name:</labelar>
+                    <input type="text" id="ownerName" name="ownerName" required>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="ownerContactNumber">Contact Number:</labelar>
+                    <input type="number" id="ownerContactNumber" name="ownerContactNumber" required>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="panCard">Pan Card:</labelar>
+                    <input type="file" id="panCard" name="panCard" required>
+                </div>
+                <div class="form-groupar">
+                    <labelar for="restaurantLicense">Restaurant License:</labelar>
+                    <input type="file" id="restaurantLicense" name="restaurantLicense" required>
+                </div>
+            </div>
+        
+            <div class="containerar">
+                <h2>Restaurant Images</h2>
+                <div class="form-groupar">
+                    <labelar for="restaurantImages">Upload Images:</labelar>
+                    <input type="file" id="restaurantImages" name="restaurantImages" accept="image/*" multiple required>
+                </div>
+            </div>
+        
+            <button class="buttonar"submitBtn>Submit</button>
+            <script>
+                // Add the 'required' attribute to all input and select elements
+                const formFields = document.querySelectorAll('input, select');
+                formFields.forEach(field => {
+                    field.setAttribute('required', 'true');
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="container" id="containerViewRestaurants">
+        <h1>View Existing Restaurants</h1>
+        <div class="container-content">
+            <p>This is the content for viewing existing restaurants.</p>
+            <p>You can browse and search for restaurants already listed on our website.</p>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+   
+
+    <script>
+        // Get references to the buttons and containers
+        const addRestaurantButton = document.getElementById("addRestaurantButton");
+        const viewRestaurantsButton = document.getElementById("viewRestaurantsButton");
+        const containerAddRestaurant = document.getElementById("containerAddRestaurant");
+        const containerViewRestaurants = document.getElementById("containerViewRestaurants");
+
+        // Add event listeners to the buttons to toggle container visibility
+        addRestaurantButton.addEventListener("click", function () {
+            containerAddRestaurant.style.display = "block";
+            containerViewRestaurants.style.display = "none";
+        });
+
+        viewRestaurantsButton.addEventListener("click", function () {
+            containerAddRestaurant.style.display = "none";
+            containerViewRestaurants.style.display = "block";
+        });
+    </script>
+</body>
+</html>

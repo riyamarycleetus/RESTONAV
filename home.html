@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        body {
+          font-family: 'Poppins', sans-serif;
+        	font-size:14px;
+	        color:#ffffff;
+          text-transform:initial;
+          max-width:1920px;
+          margin:0;
+	        overflow:hidden;
+            padding: 0;
+            background-image: url('1.jpg'); /* Set the background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color:transparent;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+            margin-top: 40px;
+        }
+
+        .main-text {
+            font-size: 30px;
+            margin-bottom: 0px;
+            
+        }
+
+        .sub-text {
+            font-size: 20px;
+            padding-bottom: 30px;
+            font-style: italic;
+        }
+
+        .login-signup-button {
+            background-color: transparent;
+            color: #fff;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family:  'Poppins', sans-serif;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+        }
+        .login-signup-button:hover{
+          transform: scale(1.1);
+          color: #b3121faf;
+        }
+        /* Style for the rectangular white buttons */
+        .subbuttons {
+            margin-top: 20px;
+            
+        }
+       
+
+        .button {
+          width: 300px;
+          height: 100px;
+           
+            color: #333; /* Text color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px; /* No border radius for a rectangular shape */
+            cursor: pointer;
+            margin: 0 60px;
+            font-weight:600;
+            font-family: 'Poppins', sans-serif;  
+            font-size: 18px;  
+            background-color: rgba(255, 255, 255, 0.8);
+             /* Add a transition for size change */
+             transition: all 0.2s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.05); /* Enlarge the button by 10% on hover */
+        }
+       
+/* Home */
+.home {
+
+}
+.home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* From */
+.form_container {
+  position: fixed;
+  max-width: 400px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(237, 124, 124, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.signup_form {
+  display: none;
+}
+.form_container.active .signup_form {
+  display: block;
+}
+.form_container.active .login_form {
+  display: none;
+}
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 90%;
+  height: 40px;
+}
+.input_box input {
+  height: 100%;
+  width: 90%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #000000;
+}
+.input_box input:focus {
+  border-color: #bcbec0;
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ff0800;
+}
+.input_box i.email,
+.input_box i.password {
+  left: 0;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+  color: #000000;
+}
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form_container a {
+  color: #000000;
+  font-size: 12px;
+}
+.form_container a:hover {
+  text-decoration: underline;
+}
+.checkbox {
+  display: flex;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+.checkbox input {
+  accent-color: #000000;
+}
+.checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #0b0217;
+}
+.form_container .button {
+  background: #934444;
+  margin-top: 30px;
+  width: 70%;  
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+  color: #000000;
+}
+ .contact-section
+ {
+  text-align: center;
+  padding: 50px;
+  margin-top: 70px;
+
+}    
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }    
+
+    </style>
+</head>
+<body>
+<section class="home">    
+    <header >
+        <a id="linkButton4" href="contact.html" style="display: none;"></a>
+    
+        <button class="login-signup-button" onclick="document.getElementById('linkButton4').click()">CONTACT US</button>  
+        <button class="login-signup-button">ABOUT</button>       
+        
+        <div class="dropdown">
+          <button class="login-signup-button">PROFILE &#9660;</button>
+          <div class="dropdown-content">
+              
+              <a id="form-open" href="#">Login/Sign Up</a>
+              <a href="logout.php" >Logout</a>
+          </div>
+      </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-text">
+            <h1>RESTONAV</h1>
+        </div>
+        <div class="sub-text">
+            <p>Explore the different restaurants and cafes in your city!</p>
+            <p>Donate food!</p>
+        </div>
+        <div class="subbuttons">
+            <a id="linkButton" href="restaurants.php" style="display: none;"></a>
+            <button class="button" onclick="document.getElementById('linkButton').click()">FIND RESTAURANTS </button>
+            <a id="linkButton2" href="res.php" style="display: none;"></a>
+            <button class="button"  onclick="document.getElementById('linkButton2').click()">ADD RESTAURANT</button>
+            <a id="linkButton3" href="donate/donate.html" style="display: none;"></a>
+            <button class="button"  onclick="document.getElementById('linkButton3').click()">DONATE FOOD</button>
+        </div>
+    </div>
+
+    <section class="home">
+      <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        <!-- Login From -->
+        <div class="form login_form">
+          <form action="login-signup.php" method="post">
+            <h2>Login</h2>      
+            <div class="input_box">
+            <input type="email" name="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+             <input type="password" name="password" placeholder="Enter your password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+
+            <div class="option_field">
+              <span class="checkbox">
+                <input type="checkbox" id="check" />
+                <label for="check">Remember me</label>
+              </span>
+              <a href="#" class="forgot_pw">Forgot password?</a>
+            </div>
+
+            <button class="button" type="submit" name="login">Login Now</button>
+
+            <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+          </form>
+        </div>
+
+        <!-- Signup From -->
+        <div class="form signup_form">
+          <form action="login-signup.php" method="post">
+            <h2>Signup</h2>
+            <div class="input_box">
+            <input type="email" name="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+            <input type="password" id="password" name="password" placeholder="Create password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+            <div class="input_box">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+            <button class="button" type="submit" name="signup">Signup Now</button>
+
+            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <script>
+  const formOpenBtn = document.querySelector("#form-open"),
+  home = document.querySelector(".home"),
+  formContainer = document.querySelector(".form_container"),
+  formCloseBtn = document.querySelector(".form_close"),
+  signupBtn = document.querySelector("#signup"),
+  loginBtn = document.querySelector("#login"),
+  pwShowHide = document.querySelectorAll(".pw_hide");
+
+formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+
+pwShowHide.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
+    } else {
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
+    }
+  });
+});
+
+signupBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formContainer.classList.add("active");
+});
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formContainer.classList.remove("active");
+});
+
+const password = document.querySelector("#password");
+const confirmPassword = document.querySelector("#confirm_password");
+
+confirmPassword.addEventListener("input", () => {
+    if (confirmPassword.value !== password.value) {
+        confirmPassword.setCustomValidity("Passwords do not match");
+    } else {
+        confirmPassword.setCustomValidity("");
+    }
+});
+    </script>
+</body>
+</html>

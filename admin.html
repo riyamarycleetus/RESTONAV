@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Admin Panel - Restaurant Approval</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    text-align: left;
+    width: 300px;
+    background-color: #f5f5f5;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+obutton {
+    background-color: beige;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+button.reject {
+    background-color: #ff4444;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Admin Panel - Restaurant Approval</h1>
+    <div id="restaurants-container">
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    // Simulate loading data from the database
+    const restaurantsData = [
+        {
+            id: 1,
+            name: "Restaurant A",
+            description: "Description of Restaurant A",
+        },
+        {
+            id: 2,
+            name: "Restaurant B",
+            description: "Description of Restaurant B",
+        },
+        // Add more restaurant data here
+    ];
+
+    const restaurantsContainer = document.getElementById("restaurants-container");
+
+    // Dynamically create containers for each restaurant
+    restaurantsData.forEach((restaurant) => {
+        const container = document.createElement("div");
+        container.className = "container";
+
+        const name = document.createElement("h2");
+        name.textContent = restaurant.name;
+
+        const description = document.createElement("p");
+        description.textContent = restaurant.description;
+
+        const approveButton = document.createElement("button");
+        approveButton.textContent = "Approve";
+
+        const rejectButton = document.createElement("button");
+        rejectButton.textContent = "Reject";
+        rejectButton.className = "reject";
+
+        // Event listeners for approve and reject buttons
+        approveButton.addEventListener("click", () => {
+            // Handle approval logic here, e.g., send a request to the server
+            console.log(`Approved: ${restaurant.name}`);
+        });
+
+        rejectButton.addEventListener("click", () => {
+            // Handle rejection logic here, e.g., send a request to the server
+            console.log(`Rejected: ${restaurant.name}`);
+        });
+
+        container.appendChild(name);
+        container.appendChild(description);
+        container.appendChild(approveButton);
+        container.appendChild(rejectButton);
+        restaurantsContainer.appendChild(container);
+    });
+});
+
+    </script>
+</body>
+</html>

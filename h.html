@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="logo/favicon.png"/>
+          
+
+       <!--bootstrap.min.css-->
+       <link rel="stylesheet" href="css/bootstrap.min.css">
+       
+       <!--style.css-->
+       <link rel="stylesheet" href="css/style.css">
+       
+       
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .containernew {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Three containers in a row */
+            float: left;
+        }
+        h2 {
+            color: #333;
+        }
+        .restaurant-image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius:;
+        }
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Clear floats after every third container to start a new row */
+        .container:nth-child(3n+1) {
+            clear: both;
+        }
+
+        .restaurant-icons {
+            margin-top: 10px;
+        }
+
+        .restaurant-icons a {
+            text-decoration: none;
+            color: #333;
+            margin: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="home" class="welcome-hero">
+			<div class="container">
+				<div class="welcome-hero-txt">
+					<h2>best place to find and explore <br> all you need </h2>
+					<p>
+						Find Best Restaurants, Cafe, Pubs and Street foods in just One click 
+					</p>
+				</div>
+				<div class="welcome-hero-serch-box">
+					<div class="welcome-hero-form">
+						<div class="single-welcome-hero-form">
+							<h3>what?</h3>
+							<form>
+								<input type="text" placeholder="Ex: restaurants,cafe,pub etc" />
+							</form>
+							<div class="welcome-hero-form-icon">
+								<i class="flaticon-list-with-dots"></i>
+							</div>
+						</div>
+						<div class="single-welcome-hero-form">
+							<h3>location</h3>
+							<form action="index.html">
+								<input type="text" placeholder="Ex: Bangalore,Kochi etc" />
+							</form>
+							<div class="welcome-hero-form-icon">
+								<i class="flaticon-gps-fixed-indicator"></i>
+							</div>
+						</div>
+					</div>
+					<div class="welcome-hero-serch">
+						<button class="welcome-hero-btn" onclick="window.location.href='#'">
+							 search  <i data-feather="search"></i> 
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+</body>
+</html>

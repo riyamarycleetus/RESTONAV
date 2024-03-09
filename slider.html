@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Information</title>
+    <style>
+        .containerar {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .containerarar h2 {
+            margin-top: 0;
+        }
+
+        .form-groupar {
+            margin-bottom: 15px;
+        }
+
+        labelar {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        select {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+
+        buttonar {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerar">
+        <h2>Restaurant Details</h2>
+        <div class="form-groupar">
+            <labelar for="restaurantName">Restaurant Name:</labelar>
+            <input type="text" id="restaurantName" name="restaurantName" required>
+        </div>
+        <div class="form-groupar">
+            <labelar for="restaurantType">Restaurant Type:</labelar>
+            <select id="restaurantType" name="restaurantType" required>
+                <option value="pub">Pub</option>
+                <option value="cafe">Cafe</option>
+                <option value="streetfood">Street Food</option>
+                <option value="restaurant">Restaurant</option>
+            </select>
+        </div>
+        <div class="form-groupar">
+            <labelar for="phoneNumber">Phone Number:</labelar>
+            <input type="number" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <div class="form-groupar">
+            <labelar for="location">Location:</labelar>
+            <div>
+                <labelar for="latitude">Latitude:</labelar>
+                <input type="number" id="latitude" name="latitude" step="any" required>
+            </div>
+            <div>
+                <labelar for="longitude">Longitude:</labelar>
+                <input type="number" id="longitude" name="longitude" step="any" required>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerar">
+        <h2>Owner Details</h2>
+        <div class="form-groupar">
+            <labelar for="ownerName">Owner Name:</labelar>
+            <input type="text" id="ownerName" name="ownerName" required>
+        </div>
+        <div class="form-groupar">
+            <labelar for="ownerContactNumber">Contact Number:</labelar>
+            <input type="number" id="ownerContactNumber" name="ownerContactNumber" required>
+        </div>
+        <div class="form-groupar">
+            <labelar for="panCard">Pan Card:</labelar>
+            <input type="text" id="panCard" name="panCard" required>
+        </div>
+        <div class="form-groupar">
+            <labelar for="restaurantLicense">Restaurant License:</labelar>
+            <input type="text" id="restaurantLicense" name="restaurantLicense" required>
+        </div>
+    </div>
+
+    <div class="containerar">
+        <h2>Restaurant Images</h2>
+        <div class="form-groupar">
+            <labelar for="restaurantImages">Upload Images:</labelar>
+            <input type="file" id="restaurantImages" name="restaurantImages" accept="image/*" multiple required>
+        </div>
+    </div>
+
+	<button id="submitBtn">Submit</button>
+	<script>
+        // Add the 'required' attribute to all input and select elements
+        const formFields = document.querySelectorAll('input, select');
+        formFields.forEach(field => {
+            field.setAttribute('required', 'true');
+        });
+    </script>
+</body>
+</html>
